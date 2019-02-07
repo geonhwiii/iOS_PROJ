@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="_8_Switch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="apple" highlightedImage="orange" translatesAutoresizingMaskIntoConstraints="NO" id="agJ-Yd-9lB">
+                                <rect key="frame" x="50" y="70" width="275" height="288"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6kf-oF-TJF">
+                                <rect key="frame" x="150" y="489" width="75" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="토글">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="toggleButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WKA-Mk-kHN"/>
+                                </connections>
+                            </button>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OrG-2q-QWj">
+                                <rect key="frame" x="163" y="408" width="51" height="31"/>
+                                <color key="onTintColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="thumbTintColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="stateChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="8Ny-p3-l4f"/>
+                                </connections>
+                            </switch>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="OrG-2q-QWj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4FI-WB-hEn"/>
+                            <constraint firstItem="agJ-Yd-9lB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BDz-lu-SS8"/>
+                            <constraint firstItem="6kf-oF-TJF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="150" id="Czy-d4-Ckq"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6kf-oF-TJF" secondAttribute="trailing" constant="150" id="bfC-9B-APl"/>
+                            <constraint firstItem="6kf-oF-TJF" firstAttribute="top" secondItem="OrG-2q-QWj" secondAttribute="bottom" constant="50" id="dMf-sZ-Wen"/>
+                            <constraint firstItem="agJ-Yd-9lB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="dcK-gM-U4M"/>
+                            <constraint firstItem="agJ-Yd-9lB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="50" id="dzn-Js-14R"/>
+                            <constraint firstItem="OrG-2q-QWj" firstAttribute="top" secondItem="agJ-Yd-9lB" secondAttribute="bottom" constant="50" id="fMs-BO-ifx"/>
+                            <constraint firstAttribute="trailing" secondItem="agJ-Yd-9lB" secondAttribute="trailing" constant="50" id="wqm-9m-d1O"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="agJ-Yd-9lB" id="6G1-CL-WIf"/>
+                        <outlet property="toggleSwitch" destination="OrG-2q-QWj" id="lab-v9-cIx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="apple" width="420" height="288"/>
+        <image name="orange" width="312" height="294"/>
+    </resources>
+</document>

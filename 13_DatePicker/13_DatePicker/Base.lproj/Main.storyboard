@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="_3_DatePicker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="2xK-m2-sdj">
+                                <rect key="frame" x="0.0" y="50" width="375" height="216"/>
+                                <date key="date" timeIntervalSinceReferenceDate="570693195.76131594">
+                                    <!--2019-02-01 05:53:15 +0000-->
+                                </date>
+                                <connections>
+                                    <action selector="dateChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="ItE-Is-up5"/>
+                                </connections>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ay5-W4-dW6">
+                                <rect key="frame" x="100" y="316" width="175" height="30"/>
+                                <state key="normal" title="NEXT"/>
+                                <connections>
+                                    <segue destination="zAA-2N-PUp" kind="show" id="Z4E-Tg-X2d"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Ay5-W4-dW6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="0N2-g8-2e6"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ay5-W4-dW6" secondAttribute="trailing" constant="100" id="Dab-as-uTO"/>
+                            <constraint firstItem="2xK-m2-sdj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Zr0-cQ-oxk"/>
+                            <constraint firstItem="Ay5-W4-dW6" firstAttribute="top" secondItem="2xK-m2-sdj" secondAttribute="bottom" constant="50" id="eIM-7B-NHv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2xK-m2-sdj" secondAttribute="trailing" id="mQ9-wp-Kpx"/>
+                            <constraint firstItem="2xK-m2-sdj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="pHm-d4-TXS"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="picker" destination="2xK-m2-sdj" id="sAn-v6-580"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--Second View Controller-->
+        <scene sceneID="3sp-BL-xOm">
+            <objects>
+                <viewController id="zAA-2N-PUp" customClass="SecondViewController" customModule="_3_DatePicker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VYe-E9-QgD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wh7-LZ-us9">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Count Down Timer" id="SY6-ux-sf4"/>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="82d-YP-68E">
+                                <rect key="frame" x="100" y="114" width="175" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="t3Q-KN-4d2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="100"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="E3P-10-chm">
+                                <rect key="frame" x="0.0" y="264" width="375" height="216"/>
+                                <date key="date" timeIntervalSinceReferenceDate="570693922.05267298">
+                                    <!--2019-02-01 06:05:22 +0000-->
+                                </date>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dga-yk-cVh">
+                                <rect key="frame" x="100" y="530" width="175" height="30"/>
+                                <state key="normal" title="Start"/>
+                                <connections>
+                                    <action selector="start:" destination="zAA-2N-PUp" eventType="touchUpInside" id="1RJ-5E-TRC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ROv-Fi-Bsb">
+                                <rect key="frame" x="150" y="590" width="75" height="30"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="back:" destination="zAA-2N-PUp" eventType="touchUpInside" id="u3q-uD-LbX"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="E3P-10-chm" firstAttribute="trailing" secondItem="Su1-Rs-8pW" secondAttribute="trailing" id="0Xc-40-dk3"/>
+                            <constraint firstItem="Dga-yk-cVh" firstAttribute="leading" secondItem="Su1-Rs-8pW" secondAttribute="leading" constant="100" id="5QM-Y2-ge9"/>
+                            <constraint firstItem="Su1-Rs-8pW" firstAttribute="trailing" secondItem="82d-YP-68E" secondAttribute="trailing" constant="100" id="6JX-9w-hVv"/>
+                            <constraint firstItem="82d-YP-68E" firstAttribute="leading" secondItem="Su1-Rs-8pW" secondAttribute="leading" constant="100" id="9wz-St-tDp"/>
+                            <constraint firstItem="Dga-yk-cVh" firstAttribute="top" secondItem="E3P-10-chm" secondAttribute="bottom" constant="50" id="CnJ-tp-Ep4"/>
+                            <constraint firstItem="E3P-10-chm" firstAttribute="leading" secondItem="Su1-Rs-8pW" secondAttribute="leading" id="E10-8v-xMI"/>
+                            <constraint firstItem="wh7-LZ-us9" firstAttribute="trailing" secondItem="Su1-Rs-8pW" secondAttribute="trailing" id="KAY-Rk-fku"/>
+                            <constraint firstItem="ROv-Fi-Bsb" firstAttribute="leading" secondItem="Su1-Rs-8pW" secondAttribute="leading" constant="150" id="KUO-lY-awL"/>
+                            <constraint firstItem="ROv-Fi-Bsb" firstAttribute="top" secondItem="Dga-yk-cVh" secondAttribute="bottom" constant="30" id="Owm-yA-Zyd"/>
+                            <constraint firstItem="E3P-10-chm" firstAttribute="top" secondItem="82d-YP-68E" secondAttribute="bottom" constant="50" id="Rpe-EE-rIL"/>
+                            <constraint firstItem="82d-YP-68E" firstAttribute="top" secondItem="wh7-LZ-us9" secondAttribute="bottom" constant="50" id="eGt-oA-KEO"/>
+                            <constraint firstItem="Su1-Rs-8pW" firstAttribute="trailing" secondItem="ROv-Fi-Bsb" secondAttribute="trailing" constant="150" id="fbp-tm-NbJ"/>
+                            <constraint firstItem="wh7-LZ-us9" firstAttribute="leading" secondItem="Su1-Rs-8pW" secondAttribute="leading" id="hsq-tm-9PC"/>
+                            <constraint firstItem="Su1-Rs-8pW" firstAttribute="trailing" secondItem="Dga-yk-cVh" secondAttribute="trailing" constant="100" id="jN8-av-ZGh"/>
+                            <constraint firstItem="wh7-LZ-us9" firstAttribute="top" secondItem="Su1-Rs-8pW" secondAttribute="top" id="uyB-Zh-gNg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Su1-Rs-8pW"/>
+                    </view>
+                    <connections>
+                        <outlet property="picker" destination="E3P-10-chm" id="uwG-kJ-9Ic"/>
+                        <outlet property="timeLabel" destination="82d-YP-68E" id="2cg-ga-LrN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U62-FU-Qw0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1484" y="26.53673163418291"/>
+        </scene>
+    </scenes>
+</document>
