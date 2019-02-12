@@ -201,6 +201,7 @@
                         <viewLayoutGuide key="safeArea" id="eO5-aL-2WA"/>
                     </view>
                     <connections>
+                        <outlet property="bottomConstraint" destination="5xZ-0M-qyC" id="i8g-Su-dvf"/>
                         <outlet property="emailField" destination="f5S-As-Bdy" id="PLz-d1-xYt"/>
                         <outlet property="placeholderLabel" destination="8Fg-hx-aMO" id="1lC-CT-M5o"/>
                         <outlet property="titleLabel" destination="gM6-i5-Iqt" id="cWb-6u-PhB"/>
