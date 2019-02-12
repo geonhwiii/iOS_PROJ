@@ -38,6 +38,9 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // 화면 처음에는 버튼 비활성화
+        nextButton.isEnabled = false
+        
         
         var token = NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: OperationQueue.main) { [weak self] (noti) in
             // 키보드 높이만큼 컨텐트 뷰 아래 여백 추가
@@ -105,6 +108,8 @@ extension ViewController: UITextFieldDelegate {
         } else {
             placeholderLabel.text = ".slack.com"
         }
+        
+        nextButton.isEnabled = finalText.length > 0
  
         
         return true // true -> 키보드에서 입력한 문자가 실제로 텍스트 필드에 입력됨
