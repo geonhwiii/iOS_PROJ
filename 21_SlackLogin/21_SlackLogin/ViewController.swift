@@ -22,14 +22,58 @@ class ViewController: UIViewController {
     @IBOutlet weak var placeholderLabel: UILabel!
     @IBOutlet weak var placeholderLeadingConstraint: NSLayoutConstraint!
     @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+    
+    // notification 속성을 저장할 토큰
+    var tokens = [NSObjectProtocol]()
+    // 씬이 완전히 제거되는 시점에 옵저버를 함께 제거
+    deinit {
+        tokens.forEach { NotificationCenter.default.removeObserver($0) }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        urlField.becomeFirstResponder()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        var token = NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: OperationQueue.main) { [weak self] (noti) in
+            // 키보드 높이만큼 컨텐트 뷰 아래 여백 추가
+            if let frameValue = noti.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+                let keyboardFrame = frameValue.cgRectValue
+                // 상수에 저장된 값을 바텀 여백으로 지정
+                self?.bottomConstraint.constant = keyboardFrame.size.height
+                
+                UIView.animate(withDuration: 0.3, animations: {
+                    self?.view.layoutIfNeeded()
+                }, completion: { finished in
+                    UIView.setAnimationsEnabled(true) // 화면이 생성되고 바로 키보드 활성화
+                })
+            }
+            
+        }
+        tokens.append(token)
+        // 키보드가 사라질 때 여백 제거
+        token = NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: OperationQueue.main, using: { [weak self] (noti) in
+            self?.bottomConstraint.constant = 0
+            
+            UIView.animate(withDuration: 0.3, animations: {
+                self?.view.layoutIfNeeded()
+            })
+        })
+        tokens.append(token)
     }
 }
 
 extension ViewController: UITextFieldDelegate {
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        // 키보드가 표시되기 전에 애니메이션 비활성화
+        UIView.setAnimationsEnabled(false)
+    }
+    
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
         // 문자가 있다면, 즉 입력모드

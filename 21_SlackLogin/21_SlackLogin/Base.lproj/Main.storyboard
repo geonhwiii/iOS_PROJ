@@ -102,6 +102,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="tEr-A2-HAc"/>
                     <connections>
+                        <outlet property="bottomConstraint" destination="K9v-6X-E7S" id="5Ug-vn-u2h"/>
                         <outlet property="nextButton" destination="iR2-eW-0Me" id="dn9-tw-dbl"/>
                         <outlet property="placeholderLabel" destination="aaS-Di-lg0" id="DdB-sh-hrL"/>
                         <outlet property="placeholderLeadingConstraint" destination="DZc-ga-OSX" id="Qon-4E-boo"/>
