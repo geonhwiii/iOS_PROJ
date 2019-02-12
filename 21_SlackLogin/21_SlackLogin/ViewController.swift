@@ -71,6 +71,16 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: UITextFieldDelegate {
+    // 리턴키를 탭할 때마다 호출됨.
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        // 리턴키를 누르면 다음화면으로 이동
+        let cnt = textField.text?.count ?? 0
+        if cnt > 0 {
+            performSegue(withIdentifier: "emailSegue", sender: nil)
+        }
+        return true
+    }
+    
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         // 키보드가 표시되기 전에 애니메이션 비활성화
