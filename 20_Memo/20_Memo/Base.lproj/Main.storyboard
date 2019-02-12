@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <view key="tableFooterView" contentMode="scaleToFill" id="gU6-bu-iAE">
+                        <view key="tableFooterView" contentMode="scaleToFill" misplaced="YES" id="gU6-bu-iAE">
                             <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -261,6 +261,6 @@
         <image name="cocoa" width="3024" height="4032"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="fAl-7Z-5ad"/>
+        <segue reference="N6u-h8-ALq"/>
     </inferredMetricsTieBreakers>
 </document>
